@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online concrete calculator with advanced volume, material and cost estimation. Calculate concrete for slabs, footings, columns, walls and more with professional accuracy and multi-currency support.">
+    <meta name="keywords" content="concrete calculator, concrete volume calculator, cement estimator, concrete cost calculator, construction calculator, free building tools">
+    <title>Concrete Calculator - Volume, Material & Cost Estimator | Free Online Tool</title>
+    <link rel="canonical" href="https://yourwebsite.com/index.html">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Concrete Calculator",
+      "description": "Advanced concrete calculator with volume, material and cost estimation for construction projects.",
+      "applicationCategory": "ConstructionApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Construction Tools Online"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "url": "https://yourwebsite.com/index.html"
+      }
+    }
+    </script>
+    <!-- Open Graph data for social sharing -->
+    <meta property="og:title" content="Concrete Calculator - Volume, Material & Cost Estimator">
+    <meta property="og:description" content="Free online concrete calculator with advanced volume, material and cost estimation. Calculate concrete for slabs, footings, columns, walls and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/index.html">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-calculator"></i>Concrete Calculator</h1>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mobile-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Concrete Calculator</h1>
+                <div class="features">
+                    <span>Volume</span>
+                    <span>Material</span>
+                    <span>Cost</span>
+                    <span>Analysis</span>
+                </div>
+                <a href="#calculator" class="btn-primary">Start Calculating <i class="fas fa-arrow-right"></i></a>
+                <div class="trust-badges">
+                    <div class="badge"><i class="fas fa-check-circle"></i> 100% Free</div>
+                    <div class="badge"><i class="fas fa-shield-alt"></i> No Registration</div>
+                    <div class="badge"><i class="fas fa-calculator"></i> Precise Results</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2>Concrete Calculator</h2>
+            
+            <div class="calculator-content">
+                <div id="calculator-container">
+                    <!-- Volume Calculator -->
+                    <div class="calculator-form-container">
+                        <h3>Volume Calculator</h3>
+                        <div class="shape-selector">
+                            <button class="shape-btn active" data-shape="slab">Slab</button>
+                            <button class="shape-btn" data-shape="footing">Footing</button>
+                            <button class="shape-btn" data-shape="column">Column</button>
+                            <button class="shape-btn" data-shape="wall">Wall</button>
+                            <button class="shape-btn" data-shape="circular">Circular</button>
+                            <button class="shape-btn" data-shape="curb">Curb</button>
+                            <button class="shape-btn" data-shape="stairs">Stairs</button>
+                        </div>
+                        
+                        <form id="volume-form" class="calculator-form">
+                            <!-- Slab Fields - Default Visible -->
+                            <div class="shape-fields slab active">
+                                <div class="shape-diagram" id="slab-diagram">
+                                    <!-- 示意图将通过JavaScript动态生成 -->
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="slab-length">Length</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="slab-length" step="0.01" min="0" required>
+                                        <select id="length-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="slab-width">Width</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="slab-width" step="0.01" min="0" required>
+                                        <select id="width-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="slab-thickness">Thickness</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="slab-thickness" step="0.01" min="0" required>
+                                        <select id="thickness-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Footing Fields -->
+                            <div class="shape-fields footing">
+                                <div class="shape-diagram" id="footing-diagram">
+                                    <!-- 示意图将通过JavaScript动态生成 -->
+                                </div>
+                                <!-- Will be populated via JavaScript -->
+                            </div>
+                            
+                            <!-- Column Fields -->
+                            <div class="shape-fields column">
+                                <div class="shape-diagram" id="column-diagram">
+                                    <!-- 示意图将通过JavaScript动态生成 -->
+                                </div>
+                                <!-- Column-specific fields -->
+                            </div>
+                            
+                            <!-- Wall Fields -->
+                            <div class="shape-fields wall">
+                                <div class="shape-diagram" id="wall-diagram">
+                                    <!-- 示意图将通过JavaScript动态生成 -->
+                                </div>
+                                <!-- Wall-specific fields -->
+                            </div>
+                            
+                            <!-- Circular Fields -->
+                            <div class="shape-fields circular">
+                                <div class="shape-diagram" id="circular-diagram">
+                                    <!-- 示意图将通过JavaScript动态生成 -->
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="circular-diameter">Diameter</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="circular-diameter" step="0.01" min="0">
+                                        <select id="diameter-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="circular-thickness">Thickness</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="circular-thickness" step="0.01" min="0">
+                                        <select id="circular-thickness-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Curb Fields -->
+                            <div class="shape-fields curb">
+                                <div class="shape-diagram" id="curb-diagram">
+                                    <!-- 示意图将通过JavaScript动态生成 -->
+                                </div>
+                                <!-- Curb-specific fields -->
+                            </div>
+                            
+                            <!-- Stairs Fields -->
+                            <div class="shape-fields stairs">
+                                <div class="shape-diagram" id="stairs-diagram">
+                                    <!-- 示意图将通过JavaScript动态生成 -->
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="stairs-width">Width</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="stairs-width" step="0.01" min="0">
+                                        <select id="stairs-width-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="stairs-tread">Tread (per step)</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="stairs-tread" step="0.01" min="0">
+                                        <select id="stairs-tread-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="stairs-riser">Riser (per step)</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="stairs-riser" step="0.01" min="0">
+                                        <select id="stairs-riser-unit">
+                                            <option value="meters">meters</option>
+                                            <option value="centimeters">centimeters</option>
+                                            <option value="feet">feet</option>
+                                            <option value="inches">inches</option>
+                                            <option value="yards">yards</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="stairs-steps">Number of Steps</label>
+                                    <input type="number" id="stairs-steps" min="1" step="1">
+                                </div>
+                            </div>
+                            
+                            <!-- Concrete Density Selection - Common to all shapes -->
+                            <div class="density-selection">
+                                <label>Concrete Density</label>
+                                <div class="radio-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="concrete-density" value="2400" checked>
+                                        <span>Standard (2400 kg/m³)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="concrete-density" value="2200">
+                                        <span>Lightweight (2200 kg/m³)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="concrete-density" value="2500">
+                                        <span>Heavy-duty (2500 kg/m³)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="concrete-density" value="custom">
+                                        <span>Custom Density</span>
+                                    </label>
+                                    <div class="custom-density" style="display: none;">
+                                        <input type="number" id="custom-density-value" min="1500" max="3000" step="50" value="2400">
+                                        <span>kg/m³</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" id="calculate-volume" class="btn-primary">Calculate Concrete</button>
+                                <button type="reset" class="btn-secondary">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Material Estimator -->
+                    <div class="calculator-form-container">
+                        <h3>Material Estimator</h3>
+                        <form id="material-form" class="calculator-form">
+                            <div class="form-group">
+                                <label for="concrete-volume">Concrete Volume</label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="concrete-volume" step="0.01" min="0" required>
+                                    <span>m³</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Mix Ratio</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="mix-ratio" value="M20" checked>
+                                        M20 (1:1.5:3)
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="mix-ratio" value="M15">
+                                        M15 (1:2:4)
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="mix-ratio" value="M10">
+                                        M10 (1:3:6)
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="mix-ratio" value="M25">
+                                        M25 (1:1:2)
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="mix-ratio" value="custom">
+                                        Custom Ratio
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="custom-ratio" style="display: none;">
+                                <div class="form-group">
+                                    <label for="cement-ratio">Cement</label>
+                                    <input type="number" id="cement-ratio" min="1" step="0.5" value="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sand-ratio">Sand</label>
+                                    <input type="number" id="sand-ratio" min="0.5" step="0.5" value="1.5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="aggregate-ratio">Aggregate</label>
+                                    <input type="number" id="aggregate-ratio" min="0.5" step="0.5" value="3">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="water-cement-ratio">Water-Cement Ratio</label>
+                                <input type="number" id="water-cement-ratio" min="0.4" max="0.7" step="0.01" value="0.45">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="wastage-percentage">Wastage Percentage</label>
+                                <div class="input-with-unit">
+                                    <input type="number" id="wastage-percentage" min="0" max="25" value="5">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Cement Bag Size</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="cement-bag-size" value="50" checked>
+                                        50 kg
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="cement-bag-size" value="40">
+                                        40 kg
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="cement-bag-size" value="25">
+                                        25 kg
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="cement-bag-size" value="custom">
+                                        Custom Size
+                                    </label>
+                                    <div class="custom-bag-size" style="display: none;">
+                                        <input type="number" id="custom-bag-size" min="10" max="100" step="1" value="50">
+                                        <span>kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3>Material Costs</h3>
+                            <div class="materials-costs-compact">
+                                <div class="materials-row">
+                                    <div class="material-input">
+                                        <label>Cement (per bag)</label>
+                                        <div class="input-currency-group">
+                                            <input type="number" id="cement-cost" min="0" step="0.01" value="7.50">
+                                            <select id="cement-currency">
+                                                <option value="USD">USD</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="JPY">JPY</option>
+                                                <option value="CAD">CAD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="material-input">
+                                        <label>Sand (per ton)</label>
+                                        <div class="input-currency-group">
+                                            <input type="number" id="sand-cost" min="0" step="0.01" value="25">
+                                            <select id="sand-currency">
+                                                <option value="USD">USD</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="JPY">JPY</option>
+                                                <option value="CAD">CAD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="material-input">
+                                        <label>Aggregate (per ton)</label>
+                                        <div class="input-currency-group">
+                                            <input type="number" id="aggregate-cost" min="0" step="0.01" value="30">
+                                            <select id="aggregate-currency">
+                                                <option value="USD">USD</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="JPY">JPY</option>
+                                                <option value="CAD">CAD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="materials-row">
+                                    <div class="material-input">
+                                        <label><i class="fas fa-dollar-sign"></i> Display Total Cost In</label>
+                                        <select id="display-currency">
+                                            <option value="USD">USD</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="CAD">CAD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" id="calculate-materials" class="btn-primary">Calculate Materials</button>
+                                <button type="reset" class="btn-secondary">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Results & Analysis Section - Always visible -->
+                <div id="results-section">
+                    <h3>Results & Analysis</h3>
+                    <div class="results-container">
+                        <div class="results-cards">
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-cube"></i></div>
+                                <div class="result-value" id="result-volume">0</div>
+                                <div class="result-label">cubic meters</div>
+                                <div class="result-title">Concrete Volume</div>
+                            </div>
+                            
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-weight-hanging"></i></div>
+                                <div class="result-value" id="result-weight">0</div>
+                                <div class="result-label">kilograms</div>
+                                <div class="result-title">Total Weight</div>
+                            </div>
+                            
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-box"></i></div>
+                                <div class="result-value" id="result-bags">0</div>
+                                <div class="result-label">bags</div>
+                                <div class="result-title">Cement Required</div>
+                            </div>
+                            
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-dollar-sign"></i></div>
+                                <div class="result-value" id="result-cost">0</div>
+                                <div class="result-label" id="result-currency">USD</div>
+                                <div class="result-title">Estimated Total Cost</div>
+                            </div>
+                        </div>
+                        
+                        <div class="analysis-charts">
+                            <div class="chart-container">
+                                <h3>Material Quantity Breakdown</h3>
+                                <div class="material-breakdown">
+                                    <div class="material-item">
+                                        <div class="material-label">Cement</div>
+                                        <div class="material-bar-container">
+                                            <div class="material-bar cement-bar" style="width: 25%;"></div>
+                                            <span class="material-value" id="cement-amount">0 kg</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="material-item">
+                                        <div class="material-label">Sand</div>
+                                        <div class="material-bar-container">
+                                            <div class="material-bar sand-bar" style="width: 35%;"></div>
+                                            <span class="material-value" id="sand-amount">0 kg</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="material-item">
+                                        <div class="material-label">Aggregate</div>
+                                        <div class="material-bar-container">
+                                            <div class="material-bar aggregate-bar" style="width: 40%;"></div>
+                                            <span class="material-value" id="aggregate-amount">0 kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chart-container">
+                                <h3>Cost Distribution</h3>
+                                <div class="cost-breakdown">
+                                    <div class="cost-item">
+                                        <div class="cost-label">Cement Cost</div>
+                                        <div class="cost-bar-container">
+                                            <div class="cost-bar cement-cost-bar" style="width: 45%;"></div>
+                                            <span class="cost-value" id="cement-cost-value">$0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="cost-item">
+                                        <div class="cost-label">Sand Cost</div>
+                                        <div class="cost-bar-container">
+                                            <div class="cost-bar sand-cost-bar" style="width: 25%;"></div>
+                                            <span class="cost-value" id="sand-cost-value">$0</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="cost-item">
+                                        <div class="cost-label">Aggregate Cost</div>
+                                        <div class="cost-bar-container">
+                                            <div class="cost-bar aggregate-cost-bar" style="width: 30%;"></div>
+                                            <span class="cost-value" id="aggregate-cost-value">$0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="tips" class="tips-section">
+        <div class="container">
+            <h2>Concrete Tips & Best Practices</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>Precise Measurement</h3>
+                    <p>Always add 5-10% extra concrete to account for spillage, over-excavation, and other wastage during placement.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-temperature-low"></i></div>
+                    <h3>Temperature Control</h3>
+                    <p>Pour concrete when temperatures are between 10°C and 27°C. Avoid pouring in freezing conditions or extreme heat.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Water Ratio</h3>
+                    <p>Use the minimum amount of water required for workability. Excess water weakens the concrete and causes cracks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>What is a Concrete Calculator?</h2>
+                <p>A concrete calculator is an essential tool for construction professionals, DIY enthusiasts, and anyone working with concrete. It helps you accurately determine the amount of concrete needed for your project, calculates material requirements (cement, sand, aggregate), and estimates the total cost.</p>
+                
+                <p><strong>Concrete Calculator Pro takes this further by providing:</strong></p>
+                <ul>
+                    <li>Multi-currency cost estimation with real-time conversion</li>
+                    <li>Advanced shape calculations (slabs, footings, columns, walls, etc.)</li>
+                    <li>Visual material breakdowns and cost analysis charts</li>
+                    <li>Customizable density settings and mix ratios</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shapes"></i></div>
+                    <h3>7 Shape Types</h3>
+                    <p>Calculate volumes for slabs, footings, columns, walls, circular slabs, curbs & gutters, and stairs</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Multi-Currency Costs</h3>
+                    <p>Calculate costs in USD, EUR, GBP, JPY, CAD and more with real-time conversions</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Visual Analytics</h3>
+                    <p>Interactive charts for material composition and cost distribution</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>Unit Conversion</h3>
+                    <p>Work with meters, centimeters, feet, inches, and yards seamlessly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-to-section">
+        <div class="container">
+            <h2>How to Use</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Select Shape</h3>
+                    <p>Choose from 7 different concrete structures based on your project needs</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Enter Dimensions</h3>
+                    <p>Input measurements using your preferred units (meters, feet, inches, etc.)</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Configure Material</h3>
+                    <p>Set concrete density, mix ratio, wastage percentage, and cement bag size</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Calculate & Analyze</h3>
+                    <p>Get instant results including volume, materials, weight, and cost breakdown</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How accurate are the calculations?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our calculations are based on industry-standard formulas and account for material density, mix ratios, and wastage. For most projects, accuracy is within 3-5% when inputs are correctly measured.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Why should I add wastage percentage?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Concrete projects typically have 5-10% wastage due to spillage, over-excavation, uneven surfaces, and other factors. Adding this percentage ensures you don't run short during your project.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I calculate costs in different currencies?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! You can set different currencies for each material cost. The calculator automatically converts all costs to your display currency using current exchange rates.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What mix ratio should I use?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The mix ratio depends on your project requirements:</p>
+                        <ul>
+                            <li><strong>M10 (1:3:6)</strong> - General non-structural work</li>
+                            <li><strong>M15 (1:2:4)</strong> - Floor binding, foundations</li>
+                            <li><strong>M20 (1:1.5:3)</strong> - Reinforced concrete, slabs</li>
+                            <li><strong>M25 (1:1:2)</strong> - Heavy-duty structural work</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I measure for stairs?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For stairs, you need:</p>
+                        <ul>
+                            <li><strong>Width:</strong> The horizontal width of the staircase</li>
+                            <li><strong>Height:</strong> The total vertical rise</li>
+                            <li><strong>Tread:</strong> The depth of each step (typically 25-30cm)</li>
+                            <li><strong>Riser:</strong> The height of each step (typically 15-18cm)</li>
+                        </ul>
+                        <p>Our calculator will determine the number of steps and total volume.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>concretecalculatorpro@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>456 Meadow Lane, Oakwood Heights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-calculator"></i> Concrete Calculator </h2>
+                    <p>The #1 concrete volume calculator and concrete bag calculator for construction professionals and DIY enthusiasts. Save time with precise material estimates and cost calculations for all your building projects.</p>
+                    <p>Trusted by 50,000+ builders, contractors, and engineers across 120+ countries for accurate construction measurements.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#calculator">Calculator</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Concrete Calculator Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileNavToggle && mobileMenu) {
+                mobileNavToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('show');
+                    const icon = mobileNavToggle.querySelector('i');
+                    if (mobileMenu.classList.contains('show')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileNavToggle.contains(event.target) && !mobileMenu.contains(event.target) && mobileMenu.classList.contains('show')) {
+                        mobileMenu.classList.remove('show');
+                        const icon = mobileNavToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html> 

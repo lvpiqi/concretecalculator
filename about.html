@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Concrete Calculator - Learn about our mission, team, and journey to create the most advanced concrete calculator on the web.">
+    <title>About Us - Concrete Calculator | Our Story and Mission</title>
+    <link rel="canonical" href="https://yourwebsite.com/about.html">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Open Graph data for social sharing -->
+    <meta property="og:title" content="About Us - Concrete Calculator">
+    <meta property="og:description" content="Learn about our mission, team, and journey to create the most advanced concrete calculator for construction professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/about.html">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    <style>
+        .about-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            opacity: 0.9;
+            z-index: -1;
+        }
+        
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .company-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .company-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-right {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-left::after {
+            right: -10px;
+        }
+        
+        .timeline-right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 3rem 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-position {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 992px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+                text-align: left;
+            }
+            
+            .timeline-item::after {
+                left: 15px;
+            }
+            
+            .timeline::after {
+                left: 25px;
+            }
+            
+            .timeline-left, .timeline-right {
+                left: 0;
+            }
+        }
+        
+        .value-item {
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-section {
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-text::before, 
+        .testimonial-text::after {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--primary-light);
+            opacity: 0.5;
+        }
+        
+        .testimonial-text::before {
+            content: "\f10d"; /* quote left */
+            left: 0;
+            top: -10px;
+        }
+        
+        .testimonial-text::after {
+            content: "\f10e"; /* quote right */
+            right: 0;
+            bottom: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-right: 1rem;
+        }
+        
+        .author-name {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        
+        .author-position {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-calculator"></i> Concrete Calculator</h1>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mobile-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &gt; About Us
+        </div>
+    </div>
+
+    <section class="hero about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About Concrete Calculator</h1>
+                <p>Building the foundation for better construction calculations</p>
+                <div class="features">
+                    <span>Our Story</span>
+                    <span>Our Values</span>
+                    <span>Our Mission</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p class="subtitle">From Idea to Industry Standard</p>
+            
+            <div class="about-content">
+                <p>Concrete Calculator was born from a simple observation: construction professionals needed better digital tools. In 2020, our founder Michael Chen, a civil engineer with over 15 years of experience in large-scale infrastructure projects, found himself repeatedly creating spreadsheets to handle concrete calculations for his team.</p>
+                
+                <p>The process was cumbersome, error-prone, and time-consuming. Michael knew there had to be a better way. He envisioned a comprehensive yet user-friendly calculator that would handle all aspects of concrete estimation—from basic volume calculations to detailed material estimates and cost projections.</p>
+                
+                <p>Working with a team of developers and fellow engineers, Michael launched the first version of Concrete Calculator in early 2021. What began as a simple web application has grown into the most trusted calculation tool in the construction industry, serving thousands of professionals and DIY enthusiasts worldwide.</p>
+                
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-number">120+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-number">3M+</span>
+                        <span class="stat-label">Calculations</span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                </div>
+                
+                <h3>Our Evolution</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <p>Concept development and initial research</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2021</div>
+                            <p>Launch of Concrete Calculator Pro v1.0 with basic volume calculations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022</div>
+                            <p>Added material estimator and multi-currency support</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <p>Expanded to 7 shape types and introduced advanced mix ratio options</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <p>Added visual analytics, interactive diagrams, and mobile app</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025</div>
+                            <p>Complete redesign with improved UX and additional calculation tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <p class="subtitle">Principles that guide everything we do</p>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="value-title">Precision</h3>
+                    <p>We understand that accurate calculations are essential in construction. Every formula, conversion, and algorithm in our calculator is rigorously tested to ensure reliable results.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="value-title">Accessibility</h3>
+                    <p>We believe powerful tools should be available to everyone. Our calculator is designed to be intuitive for beginners while providing the advanced features professionals need.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p>We continuously seek ways to improve our calculator, incorporating new technologies and responding to industry trends to provide the most comprehensive solution available.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Reliability</h3>
+                    <p>Construction professionals depend on our tools for critical projects. We prioritize stability and performance to ensure our calculator is always available when you need it.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="value-title">Adaptability</h3>
+                    <p>The construction industry evolves, and so do we. We regularly update our calculator to accommodate new materials, techniques, and regulatory requirements.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="value-title">Sustainability</h3>
+                    <p>We're committed to supporting sustainable construction practices by helping professionals optimize material usage and reduce waste through accurate calculations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p class="subtitle">Transforming construction calculations worldwide</p>
+            
+            <div class="about-content">
+                <p>At Concrete Calculator Pro, our mission is to empower construction professionals and DIY enthusiasts with precise, reliable calculation tools that streamline project planning, reduce material waste, and increase cost efficiency.</p>
+                
+                <p>We believe that accurate calculations are the foundation of successful construction projects. By providing accessible, user-friendly tools that deliver professional-grade results, we help bridge the gap between complex engineering formulas and practical applications on the jobsite.</p>
+                
+                <p>Our commitment extends beyond just building a great calculator. We aim to create an educational platform that helps users understand the principles behind concrete mix designs, structural requirements, and material optimization—ultimately contributing to safer, more sustainable, and more cost-effective construction practices worldwide.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonial-section">
+        <div class="container">
+            <h2>What People Say About Us</h2>
+            <p class="subtitle">Trusted by professionals worldwide</p>
+            
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        Concrete Calculator Pro has become an indispensable tool for our estimating team. The accuracy and comprehensive features have helped us reduce calculation errors by over 30% and save countless hours on material takeoffs.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">RM</div>
+                        <div>
+                            <div class="author-name">Robert Miller</div>
+                            <div class="author-position">Project Manager, Miller Construction Inc.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        As someone who regularly tackles DIY home improvement projects, this calculator has saved me from multiple trips to the hardware store. The material estimations are spot on, and the cost calculator helps me budget accurately before starting any project.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">JW</div>
+                        <div>
+                            <div class="author-name">Jennifer Walsh</div>
+                            <div class="author-position">DIY Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        I teach construction technology at the community college, and I recommend Concrete Calculator Pro to all my students. The visual diagrams help them understand the relationships between dimensions and volumes, and the multi-currency support is perfect for our international students.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">TG</div>
+                        <div>
+                            <div class="author-name">Dr. Thomas Garcia</div>
+                            <div class="author-position">Professor of Construction Technology</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>contact@concretecalculatorpro.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>456 Meadow Lane, Oakwood Heights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-calculator"></i> Concrete Calculator</h2>
+                    <p>The #1 concrete volume calculator and concrete bag calculator for construction professionals and DIY enthusiasts. Save time with precise material estimates and cost calculations for all your building projects.</p>
+                    <p>Trusted by 50,000+ builders, contractors, and engineers across 120+ countries for accurate construction measurements.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Concrete Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileNavToggle && mobileMenu) {
+                mobileNavToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('show');
+                    const icon = mobileNavToggle.querySelector('i');
+                    if (mobileMenu.classList.contains('show')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileNavToggle.contains(event.target) && !mobileMenu.contains(event.target) && mobileMenu.classList.contains('show')) {
+                        mobileMenu.classList.remove('show');
+                        const icon = mobileNavToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html> 
