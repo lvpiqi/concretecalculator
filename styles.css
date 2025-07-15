@@ -1438,11 +1438,15 @@ footer {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: visible; /* 确保SVG内容不被裁剪 */
+  -webkit-transform: translateZ(0); /* iOS Safari渲染优化 */
 }
 
 .shape-diagram svg {
   max-width: 90%;
   max-height: 90%;
+  width: 90%; /* 添加固定宽度比例 */
+  height: 90%; /* 添加固定高度比例 */
 }
 
 .shape-diagram .dimension-line {
@@ -1474,4 +1478,39 @@ footer {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 2px 4px;
   border-radius: 2px;
+} 
+
+/* iOS设备特定优化 */
+@supports (-webkit-touch-callout: none) {
+  .shape-diagram {
+    height: auto;
+    min-height: 150px;
+    padding: 10px 0;
+  }
+  
+  .shape-diagram svg {
+    width: 85%;
+    height: 85%;
+    display: block;
+  }
+  
+  .shape-diagram .dimension-label {
+    font-weight: 600; /* 增加字体粗细提高可见度 */
+    font-size: 12px; /* 增大字体 */
+  }
+}
+
+/* 移动端额外优化 */
+@media (max-width: 768px) {
+  .shape-diagram {
+    max-width: 180px;
+    min-height: 130px;
+  }
+}
+
+@media (max-width: 576px) {
+  .shape-diagram {
+    max-width: 160px;
+    min-height: 110px;
+  }
 } 

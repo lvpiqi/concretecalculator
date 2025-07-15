@@ -457,7 +457,7 @@ function initShapeDiagrams() {
     // 板块(Slab)示意图
     const slabDiagram = document.getElementById('slab-diagram');
     slabDiagram.innerHTML = `
-        <svg viewBox="0 0 200 120">
+        <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
             <rect x="20" y="20" width="160" height="80" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
             
             <!-- 长度标注 -->
@@ -481,7 +481,7 @@ function initShapeDiagrams() {
     // 基脚(Footing)示意图
     const footingDiagram = document.getElementById('footing-diagram');
     footingDiagram.innerHTML = `
-        <svg viewBox="0 0 200 120">
+        <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
             <rect x="20" y="60" width="160" height="40" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
             
             <!-- 长度标注 -->
@@ -510,7 +510,7 @@ function initShapeDiagrams() {
     // 墙壁(Wall)示意图
     const wallDiagram = document.getElementById('wall-diagram');
     wallDiagram.innerHTML = `
-        <svg viewBox="0 0 200 120">
+        <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
             <rect x="40" y="20" width="30" height="80" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
             <rect x="130" y="20" width="30" height="80" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
             <rect x="40" y="20" width="120" height="80" fill="none" stroke="#2c6fbd" stroke-width="2" stroke-dasharray="3,3"/>
@@ -536,7 +536,7 @@ function initShapeDiagrams() {
     // 圆形(Circular)示意图
     const circularDiagram = document.getElementById('circular-diagram');
     circularDiagram.innerHTML = `
-        <svg viewBox="0 0 200 120">
+        <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
             <circle cx="100" cy="60" r="50" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
             
             <!-- 直径标注 -->
@@ -554,7 +554,7 @@ function initShapeDiagrams() {
     // 路缘(Curb)示意图
     const curbDiagram = document.getElementById('curb-diagram');
     curbDiagram.innerHTML = `
-        <svg viewBox="0 0 200 120">
+        <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
             <!-- 路缘和排水沟 -->
             <path d="M20,60 L20,40 L60,40 L60,80 L140,80 L140,40 L180,40 L180,60" 
                   fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
@@ -584,7 +584,7 @@ function initShapeDiagrams() {
     // 楼梯(Stairs)示意图
     const stairsDiagram = document.getElementById('stairs-diagram');
     stairsDiagram.innerHTML = `
-        <svg viewBox="0 0 200 120">
+        <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
             <!-- 楼梯 -->
             <path d="M20,100 L50,100 L50,80 L80,80 L80,60 L110,60 L110,40 L140,40 L140,20 L170,20" 
                   fill="none" stroke="#2c6fbd" stroke-width="2"/>
@@ -614,7 +614,7 @@ function drawColumnDiagram(type) {
     const columnDiagram = document.getElementById('column-diagram');
     if (type === 'round') {
         columnDiagram.innerHTML = `
-            <svg viewBox="0 0 200 120">
+            <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
                 <circle cx="100" cy="40" r="25" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
                 <line x1="75" y1="40" x2="125" y2="40" stroke="#2c6fbd" stroke-width="1" stroke-dasharray="3,3"/>
                 <rect x="75" y="40" width="50" height="60" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
@@ -634,7 +634,7 @@ function drawColumnDiagram(type) {
         `;
     } else {
         columnDiagram.innerHTML = `
-            <svg viewBox="0 0 200 120">
+            <svg viewBox="0 0 200 120" width="200" height="120" preserveAspectRatio="xMidYMid meet">
                 <rect x="75" y="30" width="50" height="40" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
                 <rect x="75" y="30" width="50" height="70" fill="#e6f0ff" stroke="#2c6fbd" stroke-width="2"/>
                 
