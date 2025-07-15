@@ -136,6 +136,11 @@ header .container {
   align-items: center;
 }
 
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo i {
   margin-right: 10px;
 }
