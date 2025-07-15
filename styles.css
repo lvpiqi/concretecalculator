@@ -1119,7 +1119,8 @@ footer {
   }
   
   .results-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   
   .analysis-charts {
@@ -1262,16 +1263,24 @@ footer {
   }
   
   .results-cards .result-card {
-    padding: 1rem;
+    padding: 10px;
   }
   
   .result-icon {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px;
   }
   
   .result-value {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+  
+  .result-label {
+    font-size: 0.8rem;
+  }
+  
+  .result-title {
+    font-size: 0.9rem;
   }
 }
 
