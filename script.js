@@ -1022,6 +1022,7 @@ function calculateCosts(cementWeight, sandWeight, aggregateWeight, bagSize) {
         maximumFractionDigits: 0
     });
     
+    
     // Update cost displays
     document.getElementById('cement-cost-value').textContent = currencyFormatter.format(cementCostUSD * exchangeRates[displayCurrency]);
     document.getElementById('sand-cost-value').textContent = currencyFormatter.format(sandCostUSD * exchangeRates[displayCurrency]);
